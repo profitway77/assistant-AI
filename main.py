@@ -3,6 +3,9 @@ import openai
 import os  # Dodajemy obsługę zmiennych środowiskowych
 
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return "Chatbot API is running!"
 
 # Pobranie klucza API z zmiennych środowiskowych
 openai.api_key = os.getenv("OPENAI_API_KEY")
